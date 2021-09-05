@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<form>
+	<fields addpath="/administrator/components/com_fabrik/elements" name="params">
+		<fieldset name="plg-visualization-pivottable">
+				
+			<field label="PLG_VIZ_PIVOTTABLE_CONNECTION_LABEL" name="pivottable_connection" type="connections"/>
+					
+			<field connection_in_repeat="false" label="PLG_VIZ_PIVOTTABLE_LIST_LABEL" name="pivottable_table" observe="params_pivottable_connection" type="fabriktables"/>
+			
+			<field name="csv_elements"
+			       type="fabrikmodalrepeat"
+			       icon="list"
+			       label="COM_FABRIK_FIELD_CSV_ELEMENTS_LABEL"
+			       description="COM_FABRIK_FIELD_CSV_ELEMENTS_DESC">
+				<fields name="params">
+					<fieldset modal="true"
+					          name="csv_elements_modal"
+					          repeat="true">
+						<field name="show_in_csv"
+							   connection="params_pivottable_connection"
+							   table="params_pivottable_table"
+							   connection_in_repeat="false" 
+						       type="element"
+						       label="COM_FABRIK_ELEMENTS"
+						       size="30"/>
+					</fieldset>
+				</fields>
+			</field>
+
+		</fieldset>
+	</fields>
+</form>
